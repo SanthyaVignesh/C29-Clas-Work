@@ -65,13 +65,25 @@ function draw(){
     platform.display();
     //log6.display();
     slingshot.display();    
+
+   
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    
+    if(bird.body.position.x >= height){
+        Matter.Body.setPosition(bird.body , {x: bird.position.x , y: bird.position.y });
+
+    }
+    else{
+        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
+    
+
 }
 
 
 function mouseReleased(){
     slingshot.fly();
+
 }

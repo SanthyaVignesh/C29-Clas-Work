@@ -6,7 +6,16 @@ class Bird extends BaseClass {
 
   display() {
     //this.body.position.x = mouseX;
-    //this.body.position.y = mouseY;
+    //this.body.positisuper.display();
+    if(this.body.position.y >= height -10 ){
+      push();
+      //World.remove(world,this.body)
+      pop();
+      Matter.Body.setPosition(this.body , {x: this.body.position.x , y: this.body.position });
+  }
+  else{
     super.display();
+    
+  }
   }
 }
